@@ -6,7 +6,7 @@ A polished single-page tutorial proposal website presenting **Human-in-the-Loop 
 
 ## Visit the Website
 
-**[Open the HLQA Tutorial Website](./index.html)**
+**[Open the HLQA Tutorial Website](https://datascienceuibk.github.io/hlqa/)**
 
 ## Visual Overview
 
