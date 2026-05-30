@@ -1,6 +1,5 @@
 const sessions = document.querySelectorAll(".session");
 const filters = document.querySelectorAll(".filter-btn");
-const outlineSteps = document.querySelectorAll(".outline-step");
 
 sessions.forEach((session) => {
   session.querySelector(".session-head").addEventListener("click", () => {
@@ -19,15 +18,6 @@ filters.forEach((btn) => {
       const show = target === "all" || s.dataset.group === target;
       s.style.display = show ? "block" : "none";
     });
-  });
-});
-
-outlineSteps.forEach((step) => {
-  step.addEventListener("click", (e) => {
-    if (e.target.closest("a")) return;
-    const isOpen = step.classList.contains("open");
-    outlineSteps.forEach((s) => s.classList.remove("open"));
-    if (!isOpen) step.classList.add("open");
   });
 });
 
