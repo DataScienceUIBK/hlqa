@@ -1,36 +1,35 @@
-# HLQA Tutorial Proposal Website
+# From Answers to Assistance
 
-This repository contains a single-page tutorial proposal website for:
+## Human-in-the-Loop Question Answering in the GenAI Era
 
-**From Answers to Assistance: Human-in-the-Loop Question Answering in GenAI Era**
+A polished single-page tutorial proposal website presenting **Human-in-the-Loop Question Answering (HLQA)** as a collaborative paradigm for reasoning support, adaptive guidance, and educational assistance.
 
 ## Visit the Website
 
-Go to the webpage here: **[Open HLQA Website](./index.html)**
+**[Open the HLQA Tutorial Website](./index.html)**
 
-## Overview Figure
+## Visual Overview
 
 ![HLQA Overview Figure](./assets/images/overview-figure.svg)
 
-## Overview
+## What This Website Presents
 
-The page presents a structured tutorial on Human-in-the-Loop Question Answering (HLQA), focusing on collaborative QA through:
+The tutorial moves from the evolution of question answering to practical human-centered systems. It highlights how modern QA can move beyond direct answers toward interactive support that helps users reason, reflect, and learn.
 
 - Adaptive questioning
 - Progressive hinting
 - Explanatory support
-- Personalization and interactive systems
+- Personalized learning
+- Human-AI collaboration
+- Open challenges for future HLQA research
 
-## Page Sections
+## Website Highlights
 
-The main sections in `index.html` are:
-
-- **Overview**: Tutorial title and summary
-- **Instructors**: Team profiles and affiliations
-- **Figure**: Visual overview illustration
-- **Tutorial Outline**: 8-part conceptual/methodological sequence
-- **Session Schedule**: Timed parts with category filters
-- **Selected References**: Highlighted supporting literature
+- **Instructor Team**: Profiles and affiliations for the tutorial organizers
+- **Tutorial Outline**: Eight structured parts covering foundations, methods, systems, and future directions
+- **Session Schedule**: Timed sessions with interactive category filters
+- **Related Papers**: Curated references connected to each tutorial topic
+- **Selected References**: Compact reading list for the core themes
 
 ## Project Structure
 
@@ -50,10 +49,3 @@ hlqa/
       ├─ ad.jpg
       └─ overview-figure.svg
 ```
-
-## Notes
-
-- Navigation anchors jump to each content section.
-- The schedule includes filter controls (`All`, `Foundations`, `Methods`, `Systems & Future`).
-- Related paper links open in new tabs.
-- To visit the tutorial page, use: **[Open HLQA Website](./index.html)**.
