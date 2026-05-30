@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HLQA Tutorial Proposal</title>
+  <meta name="description" content="From Answers to Assistance: Human-in-the-Loop Question Answering in GenAI Era">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"></div>
+      <nav class="nav">
+        <a href="#overview">Overview</a>
+        <a href="#instructors">Instructors</a>
+        <a href="#outline">Outline</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="overview" class="hero">
+      <div class="hero-layout">
+        <div class="hero-main">
+          <div class="hero-topline">EMNLP Tutorial Proposal</div>
+          <h1 class="hero-title">From Answers to Assistance: Human-in-the-Loop Question Answering in GenAI Era</h1>
+          <p class="authors">Jamshid Mozafari, Anubhav Jangra, Smaranda Muresan, Ekaterina Kochmar, Adam Jatowt</p>
+          <p class="hero-aff">University of Innsbruck, Columbia University, MBZUAI</p>
+          <p class="hero-summary">This project page summarizes the tutorial proposal with a focus on adaptive questioning, hinting, and explanation as core mechanisms for human-centered reasoning support.</p>
+        </div>
+        <aside class="hero-side">
+          <h3>At a Glance</h3>
+          <div class="hero-metrics">
+            <div class="metric"><span class="metric-num">8</span><span class="metric-label">Core Parts</span></div>
+            <div class="metric"><span class="metric-num">4</span><span class="metric-label">Research Areas</span></div>
+            <div class="metric"><span class="metric-num">50-100</span><span class="metric-label">Expected Audience</span></div>
+          </div>
+          <ul>
+            <li><strong>Focus:</strong> Human-in-the-Loop Question Answering (HLQA) for collaborative reasoning with AI</li>
+            <li><strong>Scope:</strong> Natural Language Processing (NLP), Human-Computer Interaction (HCI), cognitive science, and educational AI</li>
+            <li><strong>Goal:</strong> Sustain human reasoning, reflection, and learning, rather than only delivering final answers</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="instructors">
+      <h2>Instructor Team</h2>
+      <div class="team-grid">
+        <article class="card profile" data-url="https://www.jmozafari.com">
+          <img src="./assets/images/jm.jpg" alt="Jamshid Mozafari">
+          <div class="profile-head">
+            <div>
+              <h3>Jamshid Mozafari</h3>
+              <div class="org">University of Innsbruck</div>
+            </div>
+          </div>
+          <p>Focuses on QA, information retrieval, and human-centered AI, including hint evaluation frameworks.</p>
+        </article>
+        <article class="card profile" data-url="https://anubhav-jangra.github.io/">
+          <img src="./assets/images/aj.jpg" alt="Anubhav Jangra">
+          <div class="profile-head">
+            <div>
+              <h3>Anubhav Jangra</h3>
+              <div class="org">Columbia University</div>
+            </div>
+          </div>
+          <p>Works on personalized NLG, educational AI, and human-centered reasoning support.</p>
+        </article>
+        <article class="card profile" data-url="https://www.cs.columbia.edu/~smara/">
+          <img src="./assets/images/sm.jpg" alt="Smaranda Muresan">
+          <div class="profile-head">
+            <div>
+              <h3>Smaranda Muresan</h3>
+              <div class="org">Columbia University</div>
+            </div>
+          </div>
+          <p>Researches responsible NLP, explainability, and computational methods for human-AI collaboration.</p>
+        </article>
+        <article class="card profile" data-url="https://ekochmar.github.io/about/">
+          <img src="./assets/images/ek.jpg" alt="Ekaterina Kochmar">
+          <div class="profile-head">
+            <div>
+              <h3>Ekaterina Kochmar</h3>
+              <div class="org">MBZUAI</div>
+            </div>
+          </div>
+          <p>Studies NLP for intelligent tutoring systems and adaptive educational technologies.</p>
+        </article>
+        <article class="card profile" data-url="https://ds-informatik.uibk.ac.at/">
+          <img src="./assets/images/ad.jpg" alt="Adam Jatowt">
+          <div class="profile-head">
+            <div>
+              <h3>Adam Jatowt</h3>
+              <div class="org">University of Innsbruck</div>
+            </div>
+          </div>
+          <p>Specializes in information retrieval, text mining, and explainable QA with LLMs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="outline">
+      <h2>Tutorial Outline</h2>
+      <p class="section-subtitle">A stepwise path from foundational context to deployable human-centered QA systems.</p>
+      <div class="outline-steps outline-steps-four">
+        <article class="outline-step" data-paper-section="part1">
+          <div class="step-top">
+            <div class="step-num">01</div>
+          </div>
+          <h3>Evolution of QA</h3>
+          <p>From retrieval and extractive systems to LLM-based reasoning.</p>
+          <div class="step-tag">Context</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://scholar.google.com/scholar?q=Protecting+human+cognition+in+the+age+of+AI" target="_blank" rel="noopener">Singh et al. (2025) - Protecting human cognition in the age of AI</a></li>
+              <li><a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">Kosmyna et al. (2025) - Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="outline-step" data-paper-section="part2">
+          <div class="step-top">
+            <div class="step-num">02</div>
+          </div>
+          <h3>Cognitive Foundations</h3>
+          <p>Cognitive load, scaffolding, metacognition, and learner engagement.</p>
+          <div class="step-tag">Theory</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://scholar.google.com/scholar?q=The+Behavior+of+Tutoring+Systems+VanLehn+2006" target="_blank" rel="noopener">VanLehn (2006) - The Behavior of Tutoring Systems</a></li>
+              <li><a href="https://doi.org/10.1007/978-3-031-36336-8_83" target="_blank" rel="noopener">Elkins et al. (2023) - How Useful Are Educational Questions Generated by LLMs?</a></li>
+              <li><a href="https://www.mdpi.com/2075-4698/15/1/6" target="_blank" rel="noopener">Gerlich (2025) - AI Tools in Society: Cognitive Offloading and Critical Thinking</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="outline-step" data-paper-section="part3">
+          <div class="step-top">
+            <div class="step-num">03</div>
+          </div>
+          <h3>Adaptive Questioning</h3>
+          <p>Socratic and learner-aware question generation strategies.</p>
+          <div class="step-tag">Method</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://aclanthology.org/2023.emnlp-main.255/" target="_blank" rel="noopener">Qi et al. (2023) - The Art of SOCRATIC QUESTIONING: Recursive Thinking with Large Language Models</a></li>
+              <li><a href="https://aclanthology.org/2024.bea-1.10/" target="_blank" rel="noopener">Ashok Kumar & Lan (2024) - Improving Socratic Question Generation using Data Augmentation and Preference Optimization</a></li>
+              <li><a href="https://aclanthology.org/2021.acl-short.88/" target="_blank" rel="noopener">Srivastava & Goodman (2021) - Question Generation for Adaptive Education</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="outline-step" data-paper-section="part4">
+          <div class="step-top">
+            <div class="step-num">04</div>
+          </div>
+          <h3>Hinting</h3>
+          <p>Progressive, non-revealing guidance for intermediate reasoning.</p>
+          <div class="step-tag">Method</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://doi.org/10.1145/3578337.3605119" target="_blank" rel="noopener">Jatowt et al. (2023) - Automatic Hint Generation</a></li>
+              <li><a href="https://doi.org/10.1162/tacl_a_00751" target="_blank" rel="noopener">Jangra et al. (2024) - Navigating the Landscape of Hint Generation Research: From the Past to the Future</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="outline-steps outline-steps-four">
+        <article class="outline-step" data-paper-section="part5">
+          <div class="step-top">
+            <div class="step-num">05</div>
+          </div>
+          <h3>Explanation</h3>
+          <p>Explanations for understanding, reflection, and long-term learning.</p>
+          <div class="step-tag">Method</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://www.sciencedirect.com/science/article/pii/S0020025524016773" target="_blank" rel="noopener">Fan et al. (2025) - Weakly-supervised explainable question answering via question aware contrastive learning and adaptive gate mechanism</a></li>
+              <li><a href="https://aclanthology.org/2020.emnlp-main.575/" target="_blank" rel="noopener">Schuff et al. (2020) - F1 is Not Enough! Models and Evaluation Towards User-Centered Explainable Question Answering</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="outline-step" data-paper-section="part6">
+          <div class="step-top">
+            <div class="step-num">06</div>
+          </div>
+          <h3>Personalization</h3>
+          <p>User modeling and adaptive orchestration in applied settings.</p>
+          <div class="step-tag">Application</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://scholar.google.com/scholar?q=A+Survey+on+User+Behavior+Modeling+in+Recommender+Systems+he2023survey" target="_blank" rel="noopener">He et al. (2023) - A Survey on User Behavior Modeling in Recommender Systems</a></li>
+              <li><a href="https://scholar.google.com/scholar?q=Exploring+knowledge+tracing+in+tutor-student+dialogues+using+llms" target="_blank" rel="noopener">Scarlatos et al. (2025) - Exploring knowledge tracing in tutor-student dialogues using llms</a></li>
+              <li><a href="https://scholar.google.com/scholar?q=AI+in+education+A+review+of+personalized+learning+and+educational+technology" target="_blank" rel="noopener">Ayeni et al. (2024) - AI in education: A review of personalized learning and educational technology</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="outline-step" data-paper-section="part7">
+          <div class="step-top">
+            <div class="step-num">07</div>
+          </div>
+          <h3>Interactive Systems</h3>
+          <p>Demonstrations across educational, research, and cognitive-support settings.</p>
+          <div class="step-tag">Application</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://scholar.google.com/scholar?q=Tutor+copilot+A+human-ai+approach+for+scaling+real-time+expertise" target="_blank" rel="noopener">Loeb et al. (2024) - Tutor copilot: A human-ai approach for scaling real-time expertise</a></li>
+              <li><a href="https://scholar.google.com/scholar?q=Agent+laboratory+Using+llm+agents+as+research+assistants" target="_blank" rel="noopener">Schmidgall et al. (2025) - Agent laboratory: Using llm agents as research assistants</a></li>
+              <li><a href="https://scholar.google.com/scholar?q=The+Value+of+a+Virtual+Assistant+to+Improve+Engagement+in+Computerized+Cognitive+Training" target="_blank" rel="noopener">Zsoldos et al. (2024) - The Value of a Virtual Assistant to Improve Engagement in Computerized Cognitive Training at Home: Exploratory Study</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="outline-step" data-paper-section="part8">
+          <div class="step-top">
+            <div class="step-num">08</div>
+          </div>
+          <h3>Open Challenges</h3>
+          <p>Evaluation gaps, ethics, and roadmap directions for HLQA.</p>
+          <div class="step-tag">Future</div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <ul>
+              <li><a href="https://scholar.google.com/scholar?q=Bloom%27s+taxonomy+anderson+2001+taxonomy" target="_blank" rel="noopener">Anderson et al. (2001) - A taxonomy for learning, teaching, and assessing: A revision of Bloom's taxonomy of educational objectives: complete edition</a></li>
+              <li><a href="https://scholar.google.com/scholar?q=bloom+1956+taxonomy+of+educational+objectives" target="_blank" rel="noopener">Bloom et al. (1956) - Taxonomy of educational objectives: The classification of educational goals. Handbook 1: Cognitive domain</a></li>
+              <li><a href="https://doi.org/10.1162/tacl_a_00751" target="_blank" rel="noopener">Jangra et al. (2024) - Navigating the Landscape of Hint Generation Research: From the Past to the Future</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2>Session Schedule</h2>
+      <div class="controls">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="foundation">Foundations</button>
+        <button class="filter-btn" data-filter="methods">Methods</button>
+        <button class="filter-btn" data-filter="systems">Systems & Future</button>
+      </div>
+      <div class="timeline">
+        <article class="session open" data-group="foundation" data-paper-section="part1">
+          <button class="session-head" type="button">
+            <span class="badge">Part I</span>
+            <h3>Historical and Conceptual Background</h3>
+            <span class="duration">20 min</span>
+          </button>
+          <div class="session-body">
+            <p>QA evolution and the transition from answer-centric systems to collaborative cognitive support.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://scholar.google.com/scholar?q=Protecting+human+cognition+in+the+age+of+AI" target="_blank" rel="noopener">Singh, Taneja, Guan, and Ghosh (2025) - Protecting human cognition in the age of AI</a></li>
+                <li><a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">Kosmyna, Hauptmann, Yuan, Situ, Liao, and Beresnitzky (2025) - Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="session" data-group="foundation" data-paper-section="part2">
+          <button class="session-head" type="button">
+            <span class="badge">Part II</span>
+            <h3>Cognitive and Educational Foundations</h3>
+            <span class="duration">15 min</span>
+          </button>
+          <div class="session-body">
+            <p>Cognitive load, scaffolding, and metacognitive principles for human-centered QA design.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://scholar.google.com/scholar?q=The+Behavior+of+Tutoring+Systems+VanLehn+2006" target="_blank" rel="noopener">VanLehn (2006) - The Behavior of Tutoring Systems</a></li>
+                <li><a href="https://doi.org/10.1007/978-3-031-36336-8_83" target="_blank" rel="noopener">Elkins, Kochmar, Serban, and Cheung (2023) - How Useful Are Educational Questions Generated by Large Language Models?</a></li>
+                <li><a href="https://www.mdpi.com/2075-4698/15/1/6" target="_blank" rel="noopener">Gerlich (2025) - AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="session" data-group="methods" data-paper-section="part3">
+          <button class="session-head" type="button">
+            <span class="badge">Part III</span>
+            <h3>Adaptive Questioning</h3>
+            <span class="duration">30 min</span>
+          </button>
+          <div class="session-body">
+            <p>Socratic prompting, decomposition, and personalized question generation with evaluation criteria.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://aclanthology.org/2023.emnlp-main.255/" target="_blank" rel="noopener">Qi, Xu, Shen, Liu, Jin, Wang, and Huang (2023) - The Art of SOCRATIC QUESTIONING: Recursive Thinking with Large Language Models</a></li>
+                <li><a href="https://aclanthology.org/2024.bea-1.10/" target="_blank" rel="noopener">Ashok Kumar & Lan (2024) - Improving Socratic Question Generation using Data Augmentation and Preference Optimization</a></li>
+                <li><a href="https://aclanthology.org/2021.acl-short.88/" target="_blank" rel="noopener">Srivastava & Goodman (2021) - Question Generation for Adaptive Education</a></li>
+                <li><a href="https://scholar.google.com/scholar?q=Question+Difficulty+Estimation+for+Large+Language+Models+via+Answer+Plausibility+Scoring" target="_blank" rel="noopener">Mozafari, Piryani, and Jatowt (2025) - Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring</a></li>
+                <li><a href="https://aclanthology.org/2024.emnlp-main.658/" target="_blank" rel="noopener">Fu, Wei, Hu, Cai, and Liu (2024) - QGEval</a></li>
+                <li><a href="https://aclanthology.org/2025.bea-1.77/" target="_blank" rel="noopener">Kochmar et al. (2025) - Pedagogical Ability Assessment Findings</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="session" data-group="methods" data-paper-section="part4">
+          <button class="session-head" type="button">
+            <span class="badge">Part IV</span>
+            <h3>Hint Generation and Evaluation</h3>
+            <span class="duration">30 min</span>
+          </button>
+          <div class="session-body">
+            <p>Hinting techniques, quality metrics, and empirical evidence on educational effectiveness.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://doi.org/10.1145/3578337.3605119" target="_blank" rel="noopener">Jatowt, Gehrer, and Färber (2023) - Automatic Hint Generation</a></li>
+                <li><a href="https://doi.org/10.1162/tacl_a_00751" target="_blank" rel="noopener">Jangra, Mozafari, Jatowt, and Muresan (2024) - Navigating the Landscape of Hint Generation Research: From the Past to the Future</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="session" data-group="methods" data-paper-section="part5">
+          <button class="session-head" type="button">
+            <span class="badge">Part V</span>
+            <h3>Explanation for Learning and Reflection</h3>
+            <span class="duration">30 min</span>
+          </button>
+          <div class="session-body">
+            <p>Pedagogical explanation patterns that improve understanding and support critical thinking.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://www.sciencedirect.com/science/article/pii/S0020025524016773" target="_blank" rel="noopener">Fan, Zhang, Li, Wang, Zhang, Tan, and Liang (2025) - Weakly-supervised explainable question answering via question aware contrastive learning and adaptive gate mechanism</a></li>
+                <li><a href="https://aclanthology.org/2020.emnlp-main.575/" target="_blank" rel="noopener">Schuff et al. (2020) - F1 is Not Enough! Models and Evaluation Towards User-Centered Explainable Question Answering</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="session" data-group="systems" data-paper-section="part6">
+          <button class="session-head" type="button">
+            <span class="badge">Part VI</span>
+            <h3>Personalized Learning</h3>
+            <span class="duration">20 min</span>
+          </button>
+          <div class="session-body">
+            <p>User modeling and knowledge-tracing driven adaptation across learner profiles and goals.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://scholar.google.com/scholar?q=A+Survey+on+User+Behavior+Modeling+in+Recommender+Systems+he2023survey" target="_blank" rel="noopener">He, Liu, Guo, Qin, Zhang, Hu, and Tang (2023) - A Survey on User Behavior Modeling in Recommender Systems</a></li>
+                <li><a href="https://scholar.google.com/scholar?q=Exploring+knowledge+tracing+in+tutor-student+dialogues+using+llms" target="_blank" rel="noopener">Scarlatos, Baker, and Lan (2025) - Exploring knowledge tracing in tutor-student dialogues using llms</a></li>
+                <li><a href="https://scholar.google.com/scholar?q=AI+in+education+A+review+of+personalized+learning+and+educational+technology" target="_blank" rel="noopener">Ayeni, Al Hamad, Chisom, Osawaru, and Adewusi (2024) - AI in education: A review of personalized learning and educational technology</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="session" data-group="systems" data-paper-section="part7">
+          <button class="session-head" type="button">
+            <span class="badge">Part VII</span>
+            <h3>Human-AI Collaboration and Applications</h3>
+            <span class="duration">20 min</span>
+          </button>
+          <div class="session-body">
+            <p>Educational and research-assistance systems implementing HLQA principles in practice.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://scholar.google.com/scholar?q=Tutor+copilot+A+human-ai+approach+for+scaling+real-time+expertise" target="_blank" rel="noopener">Wang, Ribeiro, Robinson, Loeb, and Demszky (2024) - Tutor copilot: A human-ai approach for scaling real-time expertise</a></li>
+                <li><a href="https://scholar.google.com/scholar?q=Agent+laboratory+Using+llm+agents+as+research+assistants" target="_blank" rel="noopener">Schmidgall, Su, Wang, Sun, Wu, Yu, Liu, and Mooney (2025) - Agent laboratory: Using llm agents as research assistants</a></li>
+                <li><a href="https://scholar.google.com/scholar?q=The+Value+of+a+Virtual+Assistant+to+Improve+Engagement+in+Computerized+Cognitive+Training" target="_blank" rel="noopener">Zsoldos, Trân, Fournier, Tarpin-Bernard, Fruitet, and Forestier (2024) - The Value of a Virtual Assistant to Improve Engagement in Computerized Cognitive Training at Home: Exploratory Study</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="session" data-group="systems" data-paper-section="part8">
+          <button class="session-head" type="button">
+            <span class="badge">Part VIII</span>
+            <h3>Open Challenges and Future Directions</h3>
+            <span class="duration">15 min</span>
+          </button>
+          <div class="session-body">
+            <p>Roadmap for evaluation, ethics, multilingual settings, and robust collaborative QA benchmarks.</p>
+            <div class="related-papers">
+              <h4>Related Papers</h4>
+              <ul>
+                <li><a href="https://scholar.google.com/scholar?q=Bloom%27s+taxonomy+anderson+2001+taxonomy" target="_blank" rel="noopener">Anderson and Krathwohl (2001) - A taxonomy for learning, teaching, and assessing: A revision of Bloom's taxonomy of educational objectives: complete edition</a></li>
+                <li><a href="https://scholar.google.com/scholar?q=bloom+1956+taxonomy+of+educational+objectives" target="_blank" rel="noopener">Bloom, Engelhart, Furst, Hill, and Krathwohl (1956) - Taxonomy of educational objectives: The classification of educational goals. Handbook 1: Cognitive domain</a></li>
+                <li><a href="https://doi.org/10.1162/tacl_a_00751" target="_blank" rel="noopener">Jangra, Mozafari, Jatowt, and Muresan (2024) - Navigating the Landscape of Hint Generation Research: From the Past to the Future</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="references">
+      <h2>Selected References</h2>
+      <div class="refs-grid">
+        <article class="card ref-card">
+          <div class="ref-tag">Survey</div>
+          <p class="ref-text">Yue, Z. (2025). Survey of LLM-based reasoning and modern QA systems.</p>
+        </article>
+        <article class="card ref-card">
+          <div class="ref-tag">Cognitive Science</div>
+          <p class="ref-text">Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading foundations and implications.</p>
+        </article>
+        <article class="card ref-card">
+          <div class="ref-tag">Hinting</div>
+          <p class="ref-text">Jatowt, A. et al. (2023). Hint generation methods for reasoning-oriented QA interaction.</p>
+        </article>
+        <article class="card ref-card">
+          <div class="ref-tag">Explainable QA</div>
+          <p class="ref-text">Fan, Y. et al. (2025); Schuff, H. et al. (2020). Explanation quality and pedagogical value.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
