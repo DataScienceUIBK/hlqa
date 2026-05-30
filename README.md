@@ -9,6 +9,6 @@ Academic project page for:
 - `index.html`: Structured tutorial overview page.
 - `LICENSE`: Repository license.
 
-## Source Basis
+## Source Basisc
 
 The webpage content is derived from the attached LaTeX proposal (`Main.tex`) and bibliography (`custom.bib`) located outside this repository.
