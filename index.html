@@ -1,307 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HLQA: Human-in-the-Loop Question Answering</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HLQA Tutorial Proposal</title>
+  <meta name="description" content="From Answers to Assistance: Human-in-the-Loop Question Answering in GenAI Era">
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --border: #1e293b;
+      --bg: #f3f6fb;
+      --paper: #ffffff;
+      --ink: #0f172a;
+      --muted: #334155;
+      --line: #d6deea;
+      --primary: #1d4ed8;
+      --accent: #0f766e;
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      font-family: Inter, Arial, sans-serif;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
+      line-height: 1.55;
     }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container {
-      width: min(1000px, 92%);
-      margin: 0 auto;
-    }
-
-    header {
-      padding: 100px 0 80px;
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
-    }
-
-    .hero-title {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      font-weight: 800;
-    }
-
-    .hero-subtitle {
-      color: var(--muted);
-      font-size: 1.2rem;
-      max-width: 800px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      margin-bottom: 1.5rem;
-      color: var(--accent);
-      font-size: 0.9rem;
-      background: rgba(56, 189, 248, 0.08);
-    }
-
-    section {
-      padding: 70px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h2 { font-size: 2rem; margin-bottom: 1rem; }
-    p { color: #d1d5db; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .card, .step {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
+    .container { max-width: 1060px; margin: 0 auto; padding: 24px; }
+    .hero {
+      background: linear-gradient(145deg, #eff6ff 0%, #ecfeff 100%);
+      border: 1px solid var(--line);
+      border-radius: 8px;
       padding: 28px;
     }
-
-    .card { transition: transform 0.2s ease; }
-    .card:hover { transform: translateY(-4px); }
-    .card h3, .step h3 { margin-top: 0; color: var(--accent); }
-
-    .pipeline {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-      margin-top: 40px;
+    h1 { margin: 0; font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1.2; }
+    h2 { font-size: 1.3rem; margin: 26px 0 10px; }
+    h3 { font-size: 1.05rem; margin: 0 0 8px; }
+    p { margin: 8px 0; color: var(--muted); }
+    .authors { margin-top: 14px; color: #111827; font-weight: 600; }
+    .affiliation { font-size: 0.95rem; }
+    .chips { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      background: #fff;
+      border: 1px solid #bfdbfe;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 0.86rem;
+      font-weight: 600;
     }
-
-    .step {
-      flex: 1 1 250px;
-      min-width: 220px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
     }
-
-    .arrow {
-      font-size: 2rem;
-      color: var(--accent);
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
     }
-
-    ul { padding-left: 20px; color: #d1d5db; }
-
-    footer {
-      padding: 50px 0;
-      text-align: center;
-      color: var(--muted);
+    .duration { color: var(--accent); font-weight: 700; font-size: 0.9rem; }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
     }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 12px;
-      background: var(--accent);
-      color: #0f172a;
-      font-weight: 700;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    .meta .card p { margin: 4px 0; }
+    ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+    li { margin: 6px 0; }
+    .small { font-size: 0.92rem; }
+    a { color: var(--primary); }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="badge">EMNLP Tutorial</div>
-      <h1 class="hero-title">HLQA: Human-in-the-Loop Question Answering</h1>
-      <p class="hero-subtitle">
-        Collaborative reasoning and human-centered question answering in the GenAI era.
-      </p>
-
-      <div class="links">
-        <a class="button" href="#overview">Overview</a>
-        <a class="button secondary" href="#materials">Materials</a>
-        <a class="button secondary" href="#demos">Demos</a>
+  <main class="container">
+    <section class="hero">
+      <h1>From Answers to Assistance: Human-in-the-Loop Question Answering in GenAI Era</h1>
+      <p class="authors">Jamshid Mozafari, Anubhav Jangra, Smaranda Muresan, Ekaterina Kochmar, Adam Jatowt</p>
+      <p class="affiliation">University of Innsbruck, Columbia University, MBZUAI</p>
+      <p>This page summarizes the tutorial proposal content from the attached LaTeX source and bibliography, with a structured overview of scope, session design, and academic focus.</p>
+      <div class="chips">
+        <span class="chip">Human-Centered QA</span>
+        <span class="chip">Adaptive Questioning</span>
+        <span class="chip">Hint Generation</span>
+        <span class="chip">Explanation</span>
+        <span class="chip">Personalization</span>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <section id="overview">
-    <div class="container">
-      <h2>Overview</h2>
-      <p>
-        Human-in-the-Loop Question Answering (HLQA) is a design perspective that places human reasoning,
-        reflection, and cognitive engagement at the center of question answering systems.
-        Rather than treating QA as a one-step answer delivery task, HLQA reframes interaction with AI systems
-        as an adaptive collaborative reasoning process.
-      </p>
-
-      <div class="pipeline">
-        <div class="step">
-          <h3>Adaptive Questioning</h3>
-          <p>
-            Systems generate adaptive or Socratic questions that encourage users to actively reason about problems.
-          </p>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="step">
-          <h3>Hint Generation</h3>
-          <p>
-            Systems provide progressively informative guidance that scaffolds intermediate reasoning steps.
-          </p>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="step">
-          <h3>Explanation Generation</h3>
-          <p>
-            Systems reinforce understanding and reflection rather than merely presenting final answers.
-          </p>
-        </div>
+    <section>
+      <h2>Abstract</h2>
+      <div class="card">
+        <p>The tutorial reframes QA from direct answer delivery to collaborative reasoning support. It focuses on three mechanisms: adaptive questioning to stimulate thought, hinting to scaffold intermediate steps, and explanations to reinforce understanding and reflection. The central objective is to reduce cognitive offloading risks and build AI systems that support sustained human reasoning.</p>
       </div>
+    </section>
 
-      <p class="small">
-        These mechanisms can be used sequentially or adaptively depending on user responses and learning needs.
-      </p>
-    </div>
-  </section>
-
-  <section id="topics">
-    <div class="container">
-      <h2>Tutorial Topics</h2>
-
+    <section>
+      <h2>Tutorial Structure</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Collaborative QA</h3>
-          <p>
-            Reframing QA from answer delivery into interactive reasoning support.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Socratic Interaction</h3>
-          <p>
-            Adaptive questioning strategies for stimulating critical thinking and reflection.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Guided Reasoning</h3>
-          <p>
-            Hint generation and scaffolding approaches for collaborative human-AI problem solving.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Explainable QA</h3>
-          <p>
-            Explanation generation methods that support understanding and cognitive engagement.
-          </p>
-        </div>
+        <article class="card"><h3>1) From Answering to Assisting</h3><p class="small">Evolution from retrieval/extractive QA to LLM-based reasoning and human-centered design rationale.</p></article>
+        <article class="card"><h3>2) Cognitive Foundations</h3><p class="small">Cognitive load, scaffolding, metacognition, and collaborative interaction principles.</p></article>
+        <article class="card"><h3>3) Adaptive Questioning</h3><p class="small">Socratic prompts, decomposition, and learner-aware question generation with quality/effectiveness evaluation.</p></article>
+        <article class="card"><h3>4) Hinting</h3><p class="small">Progressive guidance strategies that preserve user agency while improving task progression.</p></article>
+        <article class="card"><h3>5) Explanation</h3><p class="small">Pedagogical explanation generation for understanding, reflection, and trust calibration.</p></article>
+        <article class="card"><h3>6) Personalization & Systems</h3><p class="small">User modeling, knowledge tracing, and deployment in educational and research-assistance settings.</p></article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="demos">
-    <div class="container">
-      <h2>Demos and Resources</h2>
+    <section>
+      <h2>Session Plan</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Adaptive Questioning</h3>
-          <p>Example implementation of Socratic question generation for guided reasoning.</p>
-          <a href="https://github.com/eth-nlped/socratic-generation">Socratic Generation GitHub</a>
-        </div>
-
-        <div class="card">
-          <h3>Hint Generation</h3>
-          <p>Toolkit and interactive demo for hint generation and evaluation.</p>
-          <a href="https://github.com/DataScienceUIBK/HintEval">HintEval GitHub</a><br />
-          <a href="https://hints.ds-informatik.uibk.ac.at/">Interactive Hint Demo</a>
-        </div>
-
-        <div class="card">
-          <h3>Explanation Generation</h3>
-          <p>Example interactive system for explanation-oriented learning support.</p>
-          <a href="https://www.teach-anything.com/">Teach Anything</a>
-        </div>
+        <article class="card"><p class="duration">20 min</p><h3>Historical and Conceptual Background</h3></article>
+        <article class="card"><p class="duration">15 min</p><h3>Cognitive and Educational Foundations</h3></article>
+        <article class="card"><p class="duration">30 min</p><h3>Adaptive Questioning</h3></article>
+        <article class="card"><p class="duration">30 min</p><h3>Hint Generation and Evaluation</h3></article>
+        <article class="card"><p class="duration">30 min</p><h3>Explanation for Learning and Reflection</h3></article>
+        <article class="card"><p class="duration">20 min</p><h3>Personalized Learning</h3></article>
+        <article class="card"><p class="duration">20 min</p><h3>Human-AI Collaboration and Applications</h3></article>
+        <article class="card"><p class="duration">15 min</p><h3>Open Challenges and Future Directions</h3></article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="materials">
-    <div class="container">
-      <h2>Materials</h2>
-
-      <ul>
-        <li>Slides, to be uploaded after the tutorial</li>
-        <li>Reading list and references</li>
-        <li>Interactive demos and examples</li>
-        <li>HintEval toolkit and evaluation resources</li>
-        <li>Links to datasets and implementations</li>
-        <li>Notebook examples for adaptive questioning, hint generation, and explanation generation</li>
-      </ul>
-
-      <div class="links">
-        <a class="button" href="https://github.com/DataScienceUIBK/HintEval">HintEval</a>
-        <a class="button secondary" href="https://hints.ds-informatik.uibk.ac.at/">Online Hint Demo</a>
-        <a class="button secondary" href="https://github.com/eth-nlped/socratic-generation">Socratic Generation</a>
+    <section>
+      <h2>Academic Profile</h2>
+      <div class="meta">
+        <article class="card"><h3>Target Audience</h3><p>NLP, HCI, educational AI researchers/practitioners.</p></article>
+        <article class="card"><h3>Expected Attendance</h3><p>Approximately 50-100 participants.</p></article>
+        <article class="card"><h3>Cited Literature Base</h3><p>65 cited works mapped from the proposal.</p></article>
+        <article class="card"><h3>Bibliography Size</h3><p>85 BibTeX entries in the attached reference file.</p></article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="organizers">
-    <div class="container">
-      <h2>Organizers</h2>
-      <p>
-        This tutorial brings together perspectives from NLP, cognitive science, HCI, educational AI,
-        and human-AI interaction to explore collaborative reasoning systems in the GenAI era.
-      </p>
-      <p class="small">
-        Organizers: Jamshid Mozafari, Anubhav Jangra, Smaranda Muresan, Ekaterina Kochmar, and Adam Jatowt.
-      </p>
-    </div>
-  </section>
+    <section>
+      <h2>Instructors</h2>
+      <div class="grid">
+        <article class="card"><h3>Jamshid Mozafari</h3><p class="small">University of Innsbruck</p></article>
+        <article class="card"><h3>Anubhav Jangra</h3><p class="small">Columbia University</p></article>
+        <article class="card"><h3>Smaranda Muresan</h3><p class="small">Columbia University</p></article>
+        <article class="card"><h3>Ekaterina Kochmar</h3><p class="small">MBZUAI</p></article>
+        <article class="card"><h3>Adam Jatowt</h3><p class="small">University of Innsbruck</p></article>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>HLQA — Human-in-the-Loop Question Answering</p>
-    </div>
-  </footer>
+    <section>
+      <h2>Notes</h2>
+      <div class="card">
+        <ul>
+          <li>This webpage was structured from <code>Main.tex</code> and <code>custom.bib</code> without copying those files into this repository.</li>
+          <li>For publication, enable GitHub Pages on this repository and set root to the default branch.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
